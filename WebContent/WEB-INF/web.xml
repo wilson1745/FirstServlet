@@ -26,14 +26,6 @@
     <url-pattern>/HelloServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ForwardServlet</servlet-name>
-    <servlet-class>ForwardServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ForwardServlet</servlet-name>
-    <url-pattern>/ForwardServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <description></description>
     <display-name>RequestServlet</display-name>
     <servlet-name>RequestServlet</servlet-name>
@@ -122,20 +114,39 @@
     <servlet-name>PostServlet</servlet-name>
     <url-pattern>/PostServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>LifeCycleServlet</display-name>
     <servlet-name>LifeCycleServlet</servlet-name>
     <servlet-class>LifeCycleServlet</servlet-class>
+    
     <init-param>
-    	<param-name>startPoint</param-name>
-    	<param-value>1600</param-value>
+      <param-name>startPoint</param-name>
+      <param-value>1600</param-value>
     </init-param>
+    
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>LifeCycleServlet</servlet-name>
     <url-pattern>/LifeCycleServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ForwardServlet</display-name>
+    <servlet-name>ForwardServlet</servlet-name>
+    <servlet-class>ForwardServlet</servlet-class>
+    
+    <init-param>
+      <param-name>destination</param-name>
+      <param-value>forward.jsp</param-value>
+    </init-param>
+    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForwardServlet</servlet-name>
+    <url-pattern>/ForwardServlet</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
