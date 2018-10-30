@@ -35,6 +35,8 @@ public class ForwardServlet extends HttpServlet {
 			ServletConfig conf = this.getServletConfig();
 			destination = conf.getInitParameter("destination");
 			System.out.println(destination);
+			Date date1 = new Date();
+			request.setAttribute("date", date1);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("forward.jsp");
 			dispatcher.forward(request, response);
 		} else if ("file".equals(destination)) {
