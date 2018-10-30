@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>提交使用者資訊</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+body, div, td, input {
+	font-size: 12px;
+	margin: 0px;
+}
+
+select {
+	height: 20px;
+	width: 300px;
+}
+
+.title {
+	font-size: 16px;
+	padding: 10px;
+	margin: 10px;
+	width: 80%;
+}
+
+.text {
+	height: 20px;
+	width: 300px;
+	border: 1px solid #AAAAAA;
+}
+
+.line {
+	margin: 2px;
+}
+
+.leftDiv {
+	width: 110px;
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	font-weight: bold;
+}
+
+.rightDiv {
+	height: 22px;
+}
+
+.button {
+	color: #fff;
+	font-weight: bold;
+	font-size: 11px;
+	text-align: center;
+	padding: .17em 0 .2em .17em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9cf #159 #159 #9cf;
+	background: #69c url(images/bg-btn-blue.gif) repeat-x;
+}
+</style>
+</head>
+<body>
+	<form action="/FirstServlet/PostServlet" method="POST">
+		<div align="center">
+			<br />
+			<fieldset style='width: 90%'>
+				<legend>填寫使用者資訊</legend>
+				<br />
+				<div class='line'>
+					<div align="left" class='leftDiv'>請填寫您的姓名：</div>
+					<div align="left" class='rightDiv'>
+						<input type="text" name="name" class="text" />
+					</div>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>請填寫您的密碼：</div>
+					<div align="left" class='rightDiv'>
+						<input type="password" name="password" class="text" />
+					</div>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>請再次輸入密碼：</div>
+					<div align="left" class='rightDiv'>
+						<input type="password" name="passwordConfirm" class="text" />
+					</div>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>請選擇性別：</div>
+					<div align="left" class='rightDiv'>
+						<input type="radio" name="sex" value="男" id="sexMale"> <label
+							for="sexMale">男</label> <input type="radio" name="sex" value="女"
+							id="sexFemale"> <label for="sexFemale">女</label>
+					</div>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>請輸入年齡：</div>
+					<div align="left" class='rightDiv'>
+						<input type="text" name="age" class="text">
+					</div>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>請輸入生日：</div>
+					<div align="left" class='rightDiv'>
+						<input type="text" name="birthday" class="text"> <br />格式："yyyy-mm-dd"
+					</div>
+					<br>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>請選擇您的愛好</div>
+					<div align="left" class='rightDiv'>
+						<input type="checkbox" name="interesting" value="音樂影視" id="i1">
+						<label for="i1">音樂影視</label> <input type="checkbox"
+							name="interesting" value="外出旅遊" id="i2"> <label for="i2">外出旅遊</label>
+						<input type="checkbox" name="interesting" value="社交活動" id="i3">
+						<label for="i3">社交活動</label>
+					</div>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>請選擇省市：</div>
+					<div align="left" class='rightDiv'>
+						<select name="area">
+							<option>---請選擇省份---</option>
+							<optgroup label="北京市">
+								<option value="北京市海澱區">海澱區</option>
+								<option value="北京市朝陽區">朝陽區</option>
+								<option value="北京市東城區">東城區</option>
+								<option value="北京市西城區">西城區</option>
+							</optgroup>
+							<optgroup label="山東省">
+								<option value="山東省濟南市">濟南市</option>
+								<option value="山東省青島市">青島市</option>
+								<option value="山東省濰坊市">濰坊市</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'>自我描述：</div>
+					<div align="left" class='rightDiv'>
+						<textarea name="description" rows="8" style="width: 300px;">請填寫其他資料... </textarea>
+					</div>
+					<br><br><br><br><br><br><br><br>
+				</div>
+				<div class='line'>
+					<div align="left" class='leftDiv'></div>
+					<div align="left" class='rightDiv'>
+						<br /> <input type="submit" name="btn" value=" 提交信息 "
+							class="button"><br />
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+</body>
+</html>
+
