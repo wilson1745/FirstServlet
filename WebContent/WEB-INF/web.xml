@@ -122,5 +122,20 @@
     <servlet-name>PostServlet</servlet-name>
     <url-pattern>/PostServlet</url-pattern>
   </servlet-mapping>
-
+  
+  <servlet>
+    <description></description>
+    <display-name>LifeCycleServlet</display-name>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>LifeCycleServlet</servlet-class>
+    <init-param>
+    	<param-name>startPoint</param-name>
+    	<param-value>1600</param-value>
+    </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/LifeCycleServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
