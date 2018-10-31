@@ -21,7 +21,7 @@ public class RequestServlet extends HttpServlet {
 	 */
 	private String getAccept(String accept) {
 		StringBuffer buffer = new StringBuffer();
-
+		
 		if (accept.contains("image/gif")) buffer.append("GIF 檔案, ");
 		if (accept.contains("image/x-xbitmap")) buffer.append("BMP 檔案, ");
 		if (accept.contains("image/jpeg")) buffer.append("JPG 檔案, ");
@@ -49,6 +49,8 @@ public class RequestServlet extends HttpServlet {
 	 * @return IP地址對應的實體位置
 	 */
 	private String getAddress(String ip) {
+		System.out.println("IP地址對應的實體位置: " + ip);
+		
 		return IpUtil.getIpAddress(ip);
 	}
 
@@ -57,11 +59,14 @@ public class RequestServlet extends HttpServlet {
 	 * @return 客戶端瀏覽器資訊
 	 */
 	private String getNavigator(String userAgent) {
+		System.out.println("客戶端瀏覽器資訊: " + userAgent);
+		
 		if (userAgent.indexOf("TencentTraveler") > 0) return "騰訊瀏覽器";
 		if (userAgent.indexOf("Maxthon") > 0) return "Maxthon瀏覽器";
 		if (userAgent.indexOf("MyIE2") > 0) return "MyIE2瀏覽器";
 		if (userAgent.indexOf("Firefox") > 0) return "Firefox瀏覽器";
 		if (userAgent.indexOf("MSIE") > 0) return "IE 瀏覽器";
+		if (userAgent.indexOf("Edge") > 0) return "Edge 瀏覽器";
 		return "未知瀏覽器";
 	}
 
@@ -70,9 +75,12 @@ public class RequestServlet extends HttpServlet {
 	 * @return 客戶端操作系統
 	 */
 	private String getOS(String userAgent) {
+		System.out.println("客戶端操作系統: " + userAgent);
+		
 		if (userAgent.indexOf("Windows NT 5.1") > 0) return "Windows XP";
 		if (userAgent.indexOf("Windows 98") > 0) return "Windows 98";
 		if (userAgent.indexOf("Windows NT 5.0") > 0) return "Windows 2000";
+		if (userAgent.indexOf("Windows NT 10.0") > 0) return "Windows 10";
 		if (userAgent.indexOf("Linux") > 0) return "Linux";
 		if (userAgent.indexOf("Unix") > 0) return "Unix";
 		return "未知";
@@ -93,7 +101,6 @@ public class RequestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-
 		response.setContentType("text/html");
 
 		String authType = request.getAuthType();

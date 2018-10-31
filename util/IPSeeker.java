@@ -669,6 +669,12 @@ public class IPSeeker {
 		String country = getCountry(ip).equals(" CZ88.NET") ? "" : getCountry(ip);
 		String area = getArea(ip).equals(" CZ88.NET") ? "" : getArea(ip);
 		String address = country + " " + area;
+		
+		System.out.println("country: " + country);
+		System.out.println("area: " + area);
+		System.out.println("address: " + address);
+		System.out.println("address.trim(): " + address.trim());
+		
 		return address.trim();
 	}
 }
