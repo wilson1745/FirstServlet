@@ -63,7 +63,7 @@ public class HelloServlet extends HttpServlet {
 		String method = request.getMethod();
 		// 客戶端傳送的參數 param 值
 		String param = request.getParameter("param");
-		
+
 		System.out.println(requestURI);
 
 		response.setContentType("text/html");
