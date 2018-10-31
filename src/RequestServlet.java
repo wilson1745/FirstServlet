@@ -67,6 +67,8 @@ public class RequestServlet extends HttpServlet {
 		if (userAgent.indexOf("Firefox") > 0) return "Firefox瀏覽器";
 		if (userAgent.indexOf("MSIE") > 0) return "IE 瀏覽器";
 		if (userAgent.indexOf("Edge") > 0) return "Edge 瀏覽器";
+		if (userAgent.indexOf("Mozilla") > 0) return "Mozilla 瀏覽器";
+		if (userAgent.indexOf("Chrome") > 0) return "Chrome 瀏覽器";
 		return "未知瀏覽器";
 	}
 
