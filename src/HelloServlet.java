@@ -27,7 +27,7 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 呼叫 HttpServlet 附帶的日誌函數輸出資訊到控制台
-		this.log("執行 doGet 的方法... ");
+		this.log("執行 doGet 方法... ");
 
 		// 處理 doGet
 		this.execute(request, response);
