@@ -23,8 +23,8 @@
 					中取到的 Date 為</div>
 				<div align='left' class='rightDiv'>
 					<%
-						SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-						out.print("<h2 align=\"center\">" + ft.format(date) + "</h2>");
+						//SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+						//out.print("<h2 align=\"center\">" + ft.format(date) + "</h2>");
 					%>
 				</div>
 			</div>
