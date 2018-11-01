@@ -119,34 +119,57 @@
     <display-name>LifeCycleServlet</display-name>
     <servlet-name>LifeCycleServlet</servlet-name>
     <servlet-class>LifeCycleServlet</servlet-class>
-    
     <init-param>
       <param-name>startPoint</param-name>
       <param-value>1600</param-value>
     </init-param>
-    
   </servlet>
   <servlet-mapping>
     <servlet-name>LifeCycleServlet</servlet-name>
     <url-pattern>/LifeCycleServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>ForwardServlet</display-name>
     <servlet-name>ForwardServlet</servlet-name>
     <servlet-class>ForwardServlet</servlet-class>
-    
     <init-param>
       <param-name>destination</param-name>
       <param-value>forward.jsp</param-value>
     </init-param>
-    
   </servlet>
   <servlet-mapping>
     <servlet-name>ForwardServlet</servlet-name>
     <url-pattern>/ForwardServlet</url-pattern>
   </servlet-mapping>
-  
-  
+  <servlet>
+    <description></description>
+    <display-name>LoginCookieServlet</display-name>
+    <servlet-name>LoginCookieServlet</servlet-name>
+    <servlet-class>LoginCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginCookieServlet</servlet-name>
+    <url-pattern>/LoginCookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
