@@ -172,4 +172,24 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HolisticCounter</display-name>
+    <servlet-name>HolisticCounter</servlet-name>
+    <servlet-class>HolisticCounter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HolisticCounter</servlet-name>
+    <url-pattern>/HolisticCounter</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SimpleCounter</display-name>
+    <servlet-name>SimpleCounter</servlet-name>
+    <servlet-class>SimpleCounter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SimpleCounter</servlet-name>
+    <url-pattern>/SimpleCounter</url-pattern>
+  </servlet-mapping>
 </web-app>
