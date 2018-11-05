@@ -33,7 +33,7 @@ public class RedirectServlet extends HttpServlet {
 		String filename = request.getParameter("filename");
 		
 		if (filename != null) {
-			// 點擊
+			// 點擊得到map裡index的值
 			int hit = map.get(filename);
 			// Map value更新
 			map.put(filename, ++hit);
