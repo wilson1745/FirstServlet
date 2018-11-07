@@ -1,3 +1,4 @@
+package com.servletPackage;
 
 /*
 * LumaQQ - Java QQ Client
@@ -26,6 +27,7 @@
  * 
  * @author 馬若劼
  */
+
 public class IPEntry {
 	public String beginIp;
 	public String endIp;

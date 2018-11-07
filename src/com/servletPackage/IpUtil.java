@@ -1,3 +1,4 @@
+package com.servletPackage;
 
 public class IpUtil {
 
@@ -10,5 +11,4 @@ public class IpUtil {
 		}
 		return "未知區域";
 	}
-
 }

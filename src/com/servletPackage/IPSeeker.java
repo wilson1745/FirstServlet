@@ -1,3 +1,4 @@
+package com.servletPackage;
 
 /*
 * LumaQQ - Java QQ Client
@@ -59,6 +60,7 @@ import java.util.List;
  *
  * @author 馬若劼
  */
+
 public class IPSeeker {
 	/**
 	 * <pre>
@@ -252,8 +254,7 @@ public class IPSeeker {
 	 */
 	public String getCountry(byte[] ip) {
 		// 檢查ip地址檔案是否正常
-		if (ipFile == null)
-			return "錯誤的IP資料庫檔案";
+		if (ipFile == null) return "錯誤的IP資料庫檔案";
 		// 儲存ip，轉換ip字節陣列為字串形式
 		String ipStr = Utils.getIpStringFromBytes(ip);
 		// 先檢查cache中是否已經包含有這個ip的結果，沒有再搜索檔案
@@ -285,8 +286,7 @@ public class IPSeeker {
 	 */
 	public String getArea(byte[] ip) {
 		// 檢查ip地址檔案是否正常
-		if (ipFile == null)
-			return "錯誤的IP資料庫檔案";
+		if (ipFile == null) return "錯誤的IP資料庫檔案";
 		// 儲存ip，轉換ip字節陣列為字串形式
 		String ipStr = Utils.getIpStringFromBytes(ip);
 		// 先檢查cache中是否已經包含有這個ip的結果，沒有再搜索檔案
@@ -319,8 +319,7 @@ public class IPSeeker {
 	private IPLocation getIPLocation(byte[] ip) {
 		IPLocation info = null;
 		long offset = locateIP(ip);
-		if (offset != -1)
-			info = getIPLocation(offset);
+		if (offset != -1) info = getIPLocation(offset);
 		if (info == null) {
 			info = new IPLocation();
 			info.country = "未知國家";
@@ -435,8 +434,7 @@ public class IPSeeker {
 	private int compareIP(byte[] ip, byte[] beginIp) {
 		for (int i = 0; i < 4; i++) {
 			int r = compareByte(ip[i], beginIp[i]);
-			if (r != 0)
-				return r;
+			if (r != 0) return r;
 		}
 		return 0;
 	}
@@ -453,8 +451,7 @@ public class IPSeeker {
 			return 1;
 		else if ((b1 ^ b2) == 0)// 判斷是否相等
 			return 0;
-		else
-			return -1;
+		else return -1;
 	}
 
 	/**
@@ -469,36 +466,29 @@ public class IPSeeker {
 		// 比較第一個ip項
 		readIP(ipBegin, b4);
 		r = compareIP(ip, b4);
-		if (r == 0)
-			return ipBegin;
-		else if (r < 0)
-			return -1;
+		if (r == 0) return ipBegin;
+		else if (r < 0) return -1;
 		// 開始二分搜索
 		for (long i = ipBegin, j = ipEnd; i < j;) {
 			m = getMiddleOffset(i, j);
 			readIP(m, b4);
 			r = compareIP(ip, b4);
 			// log.debug(Utils.getIpStringFromBytes(b));
-			if (r > 0)
-				i = m;
+			if (r > 0) i = m;
 			else if (r < 0) {
 				if (m == j) {
 					j -= IP_RECORD_LENGTH;
 					m = j;
-				} else
-					j = m;
-			} else
-				return readLong3(m + 4);
+				} else j = m;
+			} else return readLong3(m + 4);
 		}
 		// 如果循環結束了，那麼i和j必定是相等的，這個記錄為最可能的記錄，但是並非
 		// 肯定就是，還要檢查一下，如果是，就傳回結束地址區的絕對偏移
 		m = readLong3(m + 4);
 		readIP(m, b4);
 		r = compareIP(ip, b4);
-		if (r <= 0)
-			return m;
-		else
-			return -1;
+		if (r <= 0) return m;
+		else return -1;
 	}
 
 	/**
@@ -511,8 +501,7 @@ public class IPSeeker {
 	private long getMiddleOffset(long begin, long end) {
 		long records = (end - begin) / IP_RECORD_LENGTH;
 		records >>= 1;
-		if (records == 0)
-			records = 1;
+		if (records == 0) records = 1;
 		return begin + records * IP_RECORD_LENGTH;
 	}
 
@@ -538,8 +527,7 @@ public class IPSeeker {
 				if (b == NO_AREA) {
 					loc.country = readString(readLong3());
 					ipFile.seek(countryOffset + 4);
-				} else
-					loc.country = readString(countryOffset);
+				} else loc.country = readString(countryOffset);
 				// 讀取地區標誌
 				loc.area = readArea(ipFile.getFilePointer());
 			} else if (b == NO_AREA) {
@@ -574,8 +562,7 @@ public class IPSeeker {
 			if (b == NO_AREA) {
 				loc.country = readString(readInt3());
 				mbb.position(countryOffset + 4);
-			} else
-				loc.country = readString(countryOffset);
+			} else loc.country = readString(countryOffset);
 			// 讀取地區標誌
 			loc.area = readArea(mbb.position());
 		} else if (b == NO_AREA) {
@@ -600,12 +587,9 @@ public class IPSeeker {
 		byte b = ipFile.readByte();
 		if (b == 0x01 || b == 0x02) {
 			long areaOffset = readLong3(offset + 1);
-			if (areaOffset == 0)
-				return "未知地區";
-			else
-				return readString(areaOffset);
-		} else
-			return readString(offset);
+			if (areaOffset == 0) return "未知地區";
+			else return readString(areaOffset);
+		} else return readString(offset);
 	}
 
 	/**
@@ -617,12 +601,9 @@ public class IPSeeker {
 		byte b = mbb.get();
 		if (b == 0x01 || b == 0x02) {
 			int areaOffset = readInt3();
-			if (areaOffset == 0)
-				return "未知地區";
-			else
-				return readString(areaOffset);
-		} else
-			return readString(offset);
+			if (areaOffset == 0) return "未知地區";
+			else return readString(areaOffset);
+		} else return readString(offset);
 	}
 
 	/**
@@ -635,10 +616,8 @@ public class IPSeeker {
 		try {
 			ipFile.seek(offset);
 			int i;
-			for (i = 0, buf[i] = ipFile.readByte(); buf[i] != 0; buf[++i] = ipFile.readByte())
-				;
-			if (i != 0)
-				return Utils.getString(buf, 0, i, "GBK");
+			for (i = 0, buf[i] = ipFile.readByte(); buf[i] != 0; buf[++i] = ipFile.readByte());
+			if (i != 0) return Utils.getString(buf, 0, i, "GBK");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
@@ -655,10 +634,8 @@ public class IPSeeker {
 		try {
 			mbb.position(offset);
 			int i;
-			for (i = 0, buf[i] = mbb.get(); buf[i] != 0; buf[++i] = mbb.get())
-				;
-			if (i != 0)
-				return Utils.getString(buf, 0, i, "GBK");
+			for (i = 0, buf[i] = mbb.get(); buf[i] != 0; buf[++i] = mbb.get());
+			if (i != 0) return Utils.getString(buf, 0, i, "GBK");
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 		}
@@ -669,12 +646,6 @@ public class IPSeeker {
 		String country = getCountry(ip).equals(" CZ88.NET") ? "" : getCountry(ip);
 		String area = getArea(ip).equals(" CZ88.NET") ? "" : getArea(ip);
 		String address = country + " " + area;
-		
-		System.out.println("country: " + country);
-		System.out.println("area: " + area);
-		System.out.println("address: " + address);
-		System.out.println("address.trim(): " + address.trim());
-		
 		return address.trim();
 	}
 }
