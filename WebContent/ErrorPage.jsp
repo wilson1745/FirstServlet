@@ -7,13 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hello LoginGetparameter
-	<%
-	String name = (String)request.getAttribute("myname");
-	String nam1e = "myname";
-
-	out.println(name);
-	out.println(nam1e);
-	%>
+	<h1>
+		<%=request.getServletContext().getInitParameter("ERROR")%>.
+	</h1>
+	<form action='home'>
+		<input name="button" type="submit" id="button" value="Home">
+	</form>
 </body>
 </html>

@@ -208,10 +208,28 @@
     <display-name>LoginGetparameter</display-name>
     <servlet-name>LoginGetparameter</servlet-name>
     <servlet-class>com.servlet.LoginGetparameter</servlet-class>
+    
+    <init-param>
+    	<param-name>name</param-name>
+  		<param-value>Zarek</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>password</param-name>
+  		<param-value>123456</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginGetparameter</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginGetparameter</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+	<param-name>ERROR</param-name>
+	<param-value>please check your account, thank you !</param-value>
+  </context-param> 
 
 </web-app>
