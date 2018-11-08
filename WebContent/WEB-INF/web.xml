@@ -202,4 +202,16 @@
     <servlet-name>RedirectServlet</servlet-name>
     <url-pattern>/RedirectServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>LoginGetparameter</display-name>
+    <servlet-name>LoginGetparameter</servlet-name>
+    <servlet-class>com.servlet.LoginGetparameter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginGetparameter</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
 </web-app>
