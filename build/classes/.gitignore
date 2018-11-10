@@ -1,16 +1,1 @@
 /com/
-/ContextParamServlet.class
-/ForwardServlet.class
-/HelloServlet.class
-/HolisticCounter.class
-/IdentityServlet.class
-/InitParamServlet.class
-/InjectionServlet.class
-/LifeCycleServlet.class
-/LoginCookieServlet.class
-/LoginServlet.class
-/PostServlet.class
-/RedirectServlet.class
-/RequestServlet.class
-/SimpleCounter.class
-/UserServlet.class
