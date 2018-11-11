@@ -163,8 +163,6 @@
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>LoginServlet</servlet-class>
   </servlet>
@@ -173,8 +171,6 @@
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>HolisticCounter</display-name>
     <servlet-name>HolisticCounter</servlet-name>
     <servlet-class>HolisticCounter</servlet-class>
   </servlet>
@@ -183,8 +179,6 @@
     <url-pattern>/HolisticCounter</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>SimpleCounter</display-name>
     <servlet-name>SimpleCounter</servlet-name>
     <servlet-class>SimpleCounter</servlet-class>
   </servlet>
@@ -193,8 +187,6 @@
     <url-pattern>/SimpleCounter</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>RedirectServlet</display-name>
     <servlet-name>RedirectServlet</servlet-name>
     <servlet-class>RedirectServlet</servlet-class>
   </servlet>
@@ -204,8 +196,6 @@
   </servlet-mapping>
   
   <servlet>
-    <description></description>
-    <display-name>LoginGetparameter</display-name>
     <servlet-name>LoginGetparameter</servlet-name>
     <servlet-class>com.web.Servlet.LoginGetparameter</servlet-class>
     
@@ -220,11 +210,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginGetparameter</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LoginGetparameter</servlet-name>
-    <url-pattern>/home</url-pattern>
+    <url-pattern>/LoginGetparameter</url-pattern>
   </servlet-mapping>
 
   <context-param>
