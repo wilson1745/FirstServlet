@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>FirstServlet</display-name>
+  <display-name>Servlet</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -194,28 +194,24 @@
     <servlet-name>RedirectServlet</servlet-name>
     <url-pattern>/RedirectServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>LoginGetparameter</servlet-name>
     <servlet-class>com.web.Servlet.LoginGetparameter</servlet-class>
-    
     <init-param>
-    	<param-name>name</param-name>
-  		<param-value>Zarek</param-value>
+      <param-name>name</param-name>
+      <param-value>Zarek</param-value>
     </init-param>
     <init-param>
-    	<param-name>password</param-name>
-  		<param-value>123456</param-value>
+      <param-name>password</param-name>
+      <param-value>123456</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginGetparameter</servlet-name>
     <url-pattern>/LoginGetparameter</url-pattern>
   </servlet-mapping>
-
   <context-param>
-	<param-name>ERROR</param-name>
-	<param-value>please check your account, thank you !</param-value>
-  </context-param> 
-
+    <param-name>ERROR</param-name>
+    <param-value>please check your account, thank you !</param-value>
+  </context-param>
 </web-app>
